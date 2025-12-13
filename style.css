@@ -1,0 +1,131 @@
+/* much of this css was made with the help of ai because it is just so much btr and faster than us in these basic things */
+html,body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #121212;
+}
+
+canvas {
+  background-color: #1e1e1e;
+}
+
+#toolbar {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 14px;
+  background: rgba(62, 62, 62, 0.95);
+  backdrop-filter: blur(6px);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 10;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+.tool-btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background-color: #5a5a5a;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.tool-btn:hover {
+  background-color: #6a6a6a;
+}
+
+.tool-btn:active {
+  transform: scale(0.96);
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  background-color: #5a5a5a;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #2a2a2a;
+  padding: 12px;
+  border-radius: 12px;
+  display: none;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+.dropdown-content.show {
+  display: grid;
+}
+
+.color-option {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform 0.15s ease, border 0.15s ease;
+}
+
+.color-option:hover {
+  transform: scale(1.2);
+}
+
+.color-option.selected {
+  border-color: white;
+}
+
+.slider-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 0 6px;
+}
+
+.slider-container{
+  grid-column: 1/-1;
+  display: flex;
+  align-items: center;
+  padding-top: 6px;
+}
+
+.slider {
+  width: 100%;
+  height: 4px;
+  appearance: none;
+  background: linear-gradient(to right, #aaa, #ddd);
+  border-radius: 999px;
+  outline: none;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+}
+
+.slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: white;
+}

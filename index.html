@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" />
+    <script src="script.js" defer></script>
+    <title>Whiteboard</title>
+</head>
+
+<body>
+    <!-- the structure is easy to understand-
+     The toolbar div(z = -1) has:
+     1. a dropdown div with a pen btn which shows the dropdownlist containing the colors and slider for pen feature
+     2. a 2 seperate buttons the eraser and clear btn
+     The canvas is outside the toolbar-->
+
+    <div id="toolbar">
+        <div class="dropdown">
+            <button class="tool-btn dropbtn" id="penBtn">Pen ▾</button>
+
+            <div class="dropdown-content" id="penMenu">
+                <div class="color-option" data-color="#ffffff"></div>
+                <div class="color-option" data-color="#ff4d4d"></div>
+                <div class="color-option" data-color="#4dff4d"></div>
+                <div class="color-option" data-color="#4d4dff"></div>
+                <div class="color-option" data-color="#000000"></div>
+
+                <div class="slider-container">
+                    <input type="range" class="slider" id="penSlider" min="0.2" max="10" value="2">
+                </div>
+            </div>
+
+        </div>
+        <button class="tool-btn" id="eraserBtn">Eraser</button>
+        <button class="tool-btn" id="clearBtn">Clear</button>
+    </div>
+
+    <canvas id="board"></canvas>
+
+</body>
+
+</html>
